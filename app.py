@@ -1,45 +1,27 @@
 from flask import Flask, request, jsonify
+from datetime import datetime
+from animal_views import animal_blueprint
+from flasgger import Swagger
+
+
 
 app = Flask(__name__)
-app.debug = True
-@app.route('/')
-def hello_world(): 
-    return '<p>Hello world!</p>'
+app.register_blueprint(animal_blueprint)
 
-@app.route('/books', methods=["GET", "POST"])
-def books_helper():
-    if request.method == "POST":
-        # Create book here
-        return {"message": "Create a new book"}
-    else:
-        # Retrieve list of books here
-        return {"message": "Return list of books"}
-
-# Animals routing
-'''
-    id: int,
-    name: string,
-    species: string,
-    age: int,
-    gender: string,
-    
-'''
-# get /animals
-@app.route('/animals', methods=["GET", "POST"])
-def animals_holding():
-    pass
-
-@app.route("/animals/<int:animal_index>", methods=["GET", "PUT", "DELETE"])
-def get_animal(animal_id):
-    pass
+swagger = Swagger(app)
 
 
-#employee
-@app.route('/employees', methods=["GET", "POST"])
-def animals_holding():
-    pass
+@app.before_request
+def start_timer():
+    request.start_time = datetime.now()
 
-@app.route("/employees/<int:employee_index>", methods=["GET", "PUT", "DELETE"])
-def get_animal(animal_id):
-    pass
+@app.after_request
+def log_time(response):
+    end_time = datetime.now()
+    request_time = (end_time - request.start_time).total_seconds()
+    print(f"Request time: {request_time} seconds")
+    return response
 
+@app.errorhandler(404)
+def page_not_found(e):
+    return jsonify({"error": "Route not found"}), 404

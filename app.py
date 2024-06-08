@@ -1,12 +1,14 @@
 from flask import Flask, request, jsonify
 from datetime import datetime
 from animal_views import animal_blueprint
+from empl_views import empl_plueprint
 from flasgger import Swagger
 
 
 
 app = Flask(__name__)
 app.register_blueprint(animal_blueprint)
+app.register_blueprint(empl_plueprint)
 
 swagger = Swagger(app)
 

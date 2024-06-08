@@ -27,3 +27,7 @@ def log_time(response):
 @app.errorhandler(404)
 def page_not_found(e):
     return jsonify({"error": "Route not found"}), 404
+
+@app.route('/')
+def index():
+    return "Hello world"

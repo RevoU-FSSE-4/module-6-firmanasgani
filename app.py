@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 from datetime import datetime
-from animal_views import animal_blueprint
-from empl_views import empl_plueprint
+from blueprint.animal_views import animal_blueprint
+from blueprint.empl_views import empl_plueprint
 from flasgger import Swagger
 
 

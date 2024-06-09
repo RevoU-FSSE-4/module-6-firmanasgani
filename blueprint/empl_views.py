@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify
 from flasgger import swag_from
 from repository import employees
-from function import is_integer_id
+from utils.function import is_integer_id
 
 empl_plueprint = Blueprint("employees", __name__)
 

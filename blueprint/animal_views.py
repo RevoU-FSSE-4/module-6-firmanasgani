@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify
 from flasgger import swag_from
 from repository import animals
-from function import is_integer_id
+from utils.function import is_integer_id
 
 animal_blueprint = Blueprint("animals", __name__)
 

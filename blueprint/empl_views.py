@@ -39,7 +39,7 @@ def get_employee(empl_id):
         return jsonify({"status": "Error", "Message": message}), 400
     
 @empl_plueprint.route("/api/employee", methods=["POST"])
-@swag_from("docs/employee/create_employee.yml")
+@swag_from("../docs/employee/create_employee.yml")
 def create_empl():
     """
     Added an employee
@@ -76,7 +76,7 @@ def create_empl():
 
 
 @empl_plueprint.route("/api/employee", methods=["PUT"])
-@swag_from("docs/employee/update_employee.yml")
+@swag_from("../docs/employee/update_employee.yml")
 def update_empl():
     """
     update an existing employee

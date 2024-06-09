@@ -42,7 +42,7 @@ def get_animal(animal_id):
 
 #POST animals
 @animal_blueprint.route("/api/animals", methods=["POST"])
-@swag_from("docs/animals/create_animal.yml")
+@swag_from("../docs/animals/create_animal.yml")
 def create_animal():
     """
     Added a new animal
@@ -78,7 +78,7 @@ def create_animal():
     
 
 @animal_blueprint.route("/api/animals/<int:id>", methods=["PUT"])
-@swag_from("docs/animals/update_animal.yml")
+@swag_from("../docs/animals/update_animal.yml")
 def update_animal(id):
     data = request.get_json()
     id = data.get("id")

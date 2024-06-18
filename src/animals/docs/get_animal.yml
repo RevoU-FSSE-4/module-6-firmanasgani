@@ -1,0 +1,21 @@
+tags:
+  - Animals
+parameters:
+  - in: path
+    name: id
+    required: true
+    type: integer
+    example: "1"
+responses:
+  200:
+    description: Animal found
+    content:
+      application/json:
+        example:
+          id: "1"
+          species: Animal Species
+          gender: MALE
+          age: 12
+          special_req: Animal Special
+  404:
+    description: Animal not found

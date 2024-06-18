@@ -1,0 +1,32 @@
+  tags:
+    - Animals
+  responses:
+    201:
+      description: animals created
+      content:
+        application/json:
+          example:
+            id: "1"
+            Species: Species animal 
+            gender: Gender animal
+            special_req: Special Requirement animal
+            age: Age animal
+  parameters:
+    - in: body
+      name: body
+      required: true
+      schema:
+        type: object
+        properties:
+          species:
+            type: string
+            example: animal species
+          gender:
+            type: string
+            example: MALE
+          age:
+            type: int
+            example: 15
+          special_req:
+            type: string
+            example: Special Requirement

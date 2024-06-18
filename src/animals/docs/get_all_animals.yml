@@ -1,0 +1,20 @@
+  {
+        "tags": ["Animals"],
+        "responses": {
+            200: {
+                "description": "List of animals",
+                "schema": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "id": {"type": "integer"},
+                            "species": {"type": "string"},
+                            "gender": {"type": "string"},
+                            "age": {"type": "string"},
+                        },
+                    },
+                },
+            }
+        },
+    }

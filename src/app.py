@@ -1,9 +1,11 @@
 from flask import Flask
 from animals.routes.animal_route import animal_routes
+from employee.routes.employee_routes import employee_route
 from flasgger import Swagger
 
 app = Flask(__name__)
 app.register_blueprint(animal_routes)
+app.register_blueprint(employee_route)
 swagger = Swagger(app)
 
 @app.route("/")

@@ -1,0 +1,28 @@
+  tags:
+    - Employee
+  responses:
+    201:
+      description: emloyee created
+      content:
+        application/json:
+          example:
+            id: "1"
+            name: Name employee 
+            role: Role employee
+            scheduler: Scheduler employee
+  parameters:
+    - in: body
+      name: body
+      required: true
+      schema:
+        type: object
+        properties:
+          name:
+            type: string
+            example: employee name
+          role:
+            type: string
+            example: employee role
+          scheduler:
+            type: string
+            example: WEEKLY

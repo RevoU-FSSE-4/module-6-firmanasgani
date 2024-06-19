@@ -12,5 +12,5 @@ This step is applicable if you want to create a Flask project from scratch, if y
 
 Result of testing:
 ![alt text](image.png "Image testing result")
-url for API is https://doservice-aqgflrqg6q-et.a.run.app/apidocs/
+url for API is https://module-6-firmanasgani-aqgflrqg6q-uc.a.run.app/
 

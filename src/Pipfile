@@ -5,6 +5,8 @@ name = "pypi"
 
 [packages]
 flask = "==3.0.3"
+pytest = "*"
+coverage = "*"
 flasgger = "*"
 gunicorn = "*"
 
